@@ -1,17 +1,18 @@
 #include<stdio.h>
-void fun(int a);//函数声明
+void fun(int wz);//函数声明
 //全局变量
-int count=1,n=0,bj[10]={0},cc[10]={0};
+int n=0,bj[10]={0},cc[10]={0};
 int main()
 {
     scanf("%d",&n);
-    fun(count);
+    printf("%d的全排列:\n",n);
+    fun(1);
     return 0;
 }
-void fun(int a)//起始数
+void fun(int wz)
 {
     int i=0;
-    if(count==n)
+    if(wz>n)
     {
         for(i=1;i<=n;i++)
         {
@@ -22,12 +23,12 @@ void fun(int a)//起始数
     }
     for(i=1;i<=n;i++)
     {
-        if(bj[count]==0)
+        if(bj[i]==0)
         {
-            cc[count]=i;
-            bj[count]=1;
-            fun(count+1);
-            bj[count]=0;
+            cc[wz]=i;
+            bj[i]=1;
+            fun(wz+1);
+            bj[i]=0;
         }
     }
 }

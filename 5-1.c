@@ -58,7 +58,6 @@ void qjj(ListNode *ha,ListNode *hb)
         {
             pc=pa;
             pa=pa->next;
-
         }
     }
         
